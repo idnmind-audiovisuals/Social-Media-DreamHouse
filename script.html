@@ -58,8 +58,38 @@
     .placeholder .portal { width:min(55vw,420px); aspect-ratio:1; margin:0 auto 3rem; border:1px solid var(--line); border-radius:50%; display:grid; place-items:center; box-shadow:inset 0 0 70px rgba(225,93,143,.1),0 0 80px rgba(239,118,95,.12); animation:float 9s ease-in-out infinite; }
     .placeholder .portal span { font-family:var(--display); font-size:clamp(3rem,8vw,7rem); color:#ff9d91; }
     .placeholder p { max-width:40rem; margin:1.5rem auto 0; font-size:.8rem; line-height:1.7; }
+    .script-page { padding:clamp(4rem,9vw,8rem) clamp(1rem,6vw,5rem); }
+    .script-page .placeholder { margin-bottom:clamp(4rem,9vw,8rem); }
+    .script-page .placeholder .portal { width:min(32vw,260px); }
+    .script-content { max-width:1100px; margin:0 auto; }
+    .script-intro { display:grid; grid-template-columns:.55fr 2fr; gap:2rem; padding-top:3rem; border-top:1px solid var(--line); }
+    .script-intro-copy p { max-width:52rem; font-size:.82rem; line-height:1.75; }
+    .script-meta { display:grid; grid-template-columns:1fr 1fr; gap:1px; margin:2.5rem 0; border:1px solid var(--line); background:var(--line); }
+    .script-meta div { padding:1.3rem; background:rgba(20,22,62,.8); }
+    .script-meta strong { display:block; margin-top:.55rem; font-family:var(--display); font-size:clamp(1.35rem,2.6vw,2.3rem); font-weight:400; }
+    .script-section { padding:clamp(3rem,7vw,6rem) 0; border-top:1px solid var(--line); }
+    .script-section > h3 { margin:0 0 2rem; font-family:var(--display); font-size:clamp(2.3rem,5vw,4.8rem); line-height:.9; font-weight:400; }
+    .script-section > p { max-width:52rem; font-size:.8rem; line-height:1.75; }
+    .script-section h4 { margin:2rem 0 .8rem; font-family:var(--display); font-size:clamp(1.45rem,2.6vw,2.4rem); font-weight:400; }
+    .script-section ul { margin:.8rem 0 1.5rem; padding-left:1.2rem; }
+    .script-section li { margin:.55rem 0; font-size:.76rem; line-height:1.55; }
+    .script-voice { margin:1.3rem 0; padding-left:1.2rem; border-left:1px solid #ff9d91; font-family:var(--display); font-size:clamp(1.35rem,2.5vw,2.1rem); line-height:1.18; }
+    .script-note { color:#ff9d91; text-transform:uppercase; letter-spacing:.1em; font-size:.64rem; }
+    .scene-list { border-top:1px solid var(--line); }
+    details.scene-detail { border-bottom:1px solid var(--line); }
+    details.scene-detail summary { display:grid; grid-template-columns:140px 1fr auto; gap:1rem; align-items:center; padding:1.4rem 0; cursor:pointer; list-style:none; }
+    details.scene-detail summary::-webkit-details-marker { display:none; }
+    details.scene-detail summary::after { content:"+"; font-family:var(--display); font-size:2rem; transition:transform .3s ease; }
+    details.scene-detail[open] summary::after { transform:rotate(45deg); }
+    .timecode { font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; }
+    .scene-name { font-family:var(--display); font-size:clamp(1.6rem,3vw,2.8rem); }
+    .scene-body { padding:0 0 3.5rem 140px; max-width:900px; }
+    .scene-body > p { font-size:.78rem; line-height:1.7; }
+    .direction-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px; border:1px solid var(--line); background:var(--line); }
+    .direction-grid article { padding:1.4rem; background:rgba(20,22,62,.72); }
+    .direction-grid h4 { margin:0 0 1rem; }
     footer { display:flex; justify-content:space-between; gap:1rem; padding:1rem; background:#0d1430; border-top:1px solid var(--line); font-size:.64rem; text-transform:uppercase; }
-    @media(max-width:760px){.moon{width:43vw;right:-8vw;top:18%;opacity:.7}.intro,.direction,.passage,.format-grid{grid-template-columns:1fr}.intro{margin-bottom:3rem}.direction{margin-bottom:3rem}.tabs{position:relative}.arc{align-items:flex-start;flex-direction:column}.arc i{transform:rotate(90deg)}footer{flex-direction:column}.aura{width:85vw}}
+    @media(max-width:760px){.moon{width:43vw;right:-8vw;top:18%;opacity:.7}.intro,.direction,.passage,.format-grid,.script-intro,.script-meta,.direction-grid{grid-template-columns:1fr}.intro{margin-bottom:3rem}.direction{margin-bottom:3rem}.tabs{position:relative}.arc{align-items:flex-start;flex-direction:column}.arc i{transform:rotate(90deg)}details.scene-detail summary{grid-template-columns:1fr auto;gap:.35rem}.timecode{grid-column:1}.scene-name{grid-column:1}.scene-body{padding-left:0}footer{flex-direction:column}.aura{width:85vw}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.passage{opacity:1;transform:none}.aura{display:none}}
   </style>
 </head>
@@ -110,7 +140,121 @@
       </section>
 
       <section class="panel script-page" id="script-panel" role="tabpanel" aria-labelledby="script-tab" hidden>
-        <div class="placeholder"><div class="portal" aria-hidden="true"><span>✦</span></div><span class="label">Part 02</span><h2>The visual <em>script</em> to be confirmed.</h2><p>This section is ready for the scene-by-scene script you send: picture, action, resident voices, sound, pacing, transitions, and timing.</p></div>
+        <div class="placeholder"><div class="portal" aria-hidden="true"><span>✦</span></div><span class="label">Part 02</span><h2>The visual <em>script</em> to be confirmed.</h2></div>
+
+        <div class="script-content">
+          <div class="script-intro">
+            <span class="label">Dream House</span>
+            <div class="script-intro-copy">
+              <div class="script-meta"><div><span class="label">Format</span><strong>2–3-minute cinematic art-film trailer</strong></div><div><span class="label">Emotional arc</span><strong>Wonder → Arrival → Belonging → Creation → Transformation → Expansion</strong></div></div>
+              <p>The film follows one person moving from curiosity and distance into the lived world of Dream House.</p>
+              <p>At first, the experience appears only in fragments—almost like memories from a dream they have not yet lived. As they arrive, the film becomes warmer, more intimate, and more embodied. By the end, the dreams introduced at the beginning have become tangible, and the protagonist returns to the world carrying something new.</p>
+              <p>The film should not explain Dream House completely. It should allow the viewer to feel it.</p>
+            </div>
+          </div>
+
+          <section class="script-section" aria-labelledby="shot-list-heading">
+            <h3 id="shot-list-heading">Film Script and Shot List</h3>
+            <div class="scene-list">
+              <details class="scene-detail">
+                <summary><span class="timecode">0:00–0:28</span><span class="scene-name">Wonder</span></summary>
+                <div class="scene-body">
+                  <h4>Story Purpose</h4><p>Introduce the protagonist and create the feeling that Dream House already exists somewhere inside their imagination.</p><p>The opening should raise a question before offering any answers.</p>
+                  <h4>Picture</h4><p>Black screen.</p><p>A quiet breath.</p><p>Very distant Lisbon ambience:</p><ul><li>A tram bell</li><li>Birds</li><li>A window moving in the wind</li><li>The low sound of the city waking</li></ul><p>A person opens their eyes.</p><p>Close-up of their face in soft morning shadow.</p><p>Their feet touch the floor.</p><p>They walk toward the window and open the curtains.</p><p>The frame is consumed by overexposed morning light.</p>
+                  <h4>Voiceover</h4><blockquote class="script-voice">What is this place?</blockquote>
+                  <h4>Fast-Cut Memory Sequence</h4><p>The music enters with a sudden pulse.</p><p>Use one-to-three-frame glimpses of moments that will appear later:</p><ul><li>Someone entering a circle ceremony</li><li>Bare feet moving across a wooden floor</li><li>A hand opening the Dance Hall</li><li>The Octopus space alive with people</li><li>A quiet glimpse of the Pond</li><li>Books and sunlight inside the Old House Library</li><li>Someone laughing and crying at the same time</li><li>A marker moving across a whiteboard</li><li>Bare feet running through dry grass</li><li>A camera switching on</li><li>Hands holding one another</li><li>A webpage reading “Published”</li><li>A silhouette dancing beneath warm light</li><li>Ocean water breaking around a body</li><li>A group erupting in celebration</li><li>A quiet hug after the celebration</li><li>A flash of the Dream House exterior</li></ul><p>The flashes should feel like fragments of a future memory.</p><p>Music drops out.</p><p>Hard cut to black.</p><p>A distant laugh continues in the darkness.</p>
+                  <h4>Voiceover</h4><blockquote class="script-voice">I feel like…<br>I’ve been here before.</blockquote>
+                  <h4>Lisbon Sequence</h4><p>The protagonist walks through Lisbon with a sense of wonder.</p><ul><li>Light reflecting across tiled façades</li><li>Shoes crossing tram tracks</li><li>A tram moving through the frame</li><li>The protagonist watching it pass</li><li>Their reflection inside a shop or café window</li><li>Their hand moving along an old wall</li><li>A notebook opening</li><li>The words “I dream of…” or “What if…” being written</li><li>An unfinished drawing</li><li>The protagonist boarding a tram</li><li>Writing, sketching, or painting while the city passes outside</li><li>Reflections moving across their face</li><li>The tram doors opening</li><li>The protagonist stepping into the street</li></ul>
+                  <h4>Voiceover</h4><blockquote class="script-voice">Or maybe…<br>I’ve only dreamed about it.</blockquote><p>Match cut from the Lisbon tram window to a car window moving through the Portuguese landscape.</p>
+                </div>
+              </details>
+
+              <details class="scene-detail">
+                <summary><span class="timecode">0:28–0:55</span><span class="scene-name">Arrival</span></summary>
+                <div class="scene-body">
+                  <h4>Story Purpose</h4><p>Move from imagination into reality.</p><p>The pace slows. The viewer begins to enter the physical world of Dream House, but the complete experience is still withheld.</p>
+                  <h4>Picture</h4><ul><li>Early-morning landscape outside Lisbon</li><li>The protagonist leaning toward the open car window</li><li>Hair moving in the wind</li><li>A hand floating outside the window</li><li>The Dream House appearing briefly in the distance</li><li>A bag being lifted from the car</li><li>Feet approaching the entrance</li><li>The protagonist pausing before the door</li><li>Voices and laughter coming from inside</li><li>The door opening before they knock</li></ul><p>Do not immediately reveal the entire house or group.</p><p>Stay close to the protagonist’s perception:</p><ul><li>Faces appearing in fragments</li><li>Someone taking their bag</li><li>A hand on their shoulder</li><li>Tea being poured</li><li>Sunlight on the wall</li><li>Bodies crossing corridors</li><li>Textures of the house</li><li>Shoes gathered near the entrance</li><li>Drawings and notes on the walls</li><li>A smile exchanged with a stranger</li></ul>
+                  <h4>Voiceover</h4><blockquote class="script-voice">A place where things feel possible.</blockquote>
+                  <h4>Circle Ceremony</h4><p>The protagonist enters a circle ceremony that has already begun.</p><ul><li>Residents seated together</li><li>An open space waiting in the circle</li><li>Someone inviting the protagonist to sit</li><li>Hands resting on knees</li><li>Eyes closing</li><li>A central candle or symbolic object</li><li>The protagonist looking around</li><li>A breath</li><li>Their shoulders slowly relaxing</li></ul>
+                  <h4>Voiceover</h4><blockquote class="script-voice">Where I could arrive as I am…<br>and still express all of me.</blockquote>
+                  <h4>Natural Sound</h4><p>Let the music soften.</p><p>Bring forward:</p><ul><li>Breathing</li><li>Fabric moving</li><li>The sound of someone sitting down</li><li>A quiet welcome</li><li>A short fragment of someone speaking in the circle</li></ul>
+                </div>
+              </details>
+
+              <details class="scene-detail">
+                <summary><span class="timecode">0:55–1:25</span><span class="scene-name">Belonging</span></summary>
+                <div class="scene-body">
+                  <h4>Story Purpose</h4><p>Show strangers becoming part of one another’s lives without stating when or how the shift happened.</p><p>The warmth and rhythm begin to grow.</p>
+                  <h4>Picture</h4><ul><li>Breakfast being prepared together</li><li>Someone passing food across the table</li><li>Morning pages and tea</li><li>People co-creating around notebooks</li><li>Someone listening with complete attention</li><li>A joke slowly spreading around the table</li><li>A shared meal outside at golden hour</li><li>Residents walking toward the beach or into nature</li><li>A spontaneous race</li><li>Someone being playfully pulled toward the ocean</li><li>A hand resting on someone’s shoulder</li><li>Cuddling on the sofa</li><li>A quiet moment of affection</li><li>Watching the sunset together</li><li>Contact improvisation beginning cautiously</li><li>A missed movement</li><li>An embarrassed laugh</li><li>Trying again</li><li>The dance becoming freer</li><li>Silly, unpolished moments</li><li>People collapsing into laughter</li></ul><p>Allow several shots to continue beyond the aesthetically perfect moment. The emotional truth is often found in the reaction afterward.</p>
+                  <h4>Voiceover</h4><blockquote class="script-voice">At first…<br>we were strangers.</blockquote><p>The voice disappears for ten to fifteen seconds.</p>
+                  <h4>Real Dialogue and Natural Sound</h4><p>Use fragments rather than complete explanations:</p><blockquote class="script-voice">“Try this.”</blockquote><p>A blindfold is placed over someone’s eyes during the colour exercise.</p><blockquote class="script-voice">“Wait—tell me that again.”<br><br>“You’re serious?”</blockquote><p>Laughter.</p><p>Someone calling from another room.</p><p>Plates being placed on the table.</p><p>Footsteps.</p><p>Music coming from somewhere inside the house.</p>
+                  <h4>Voiceover</h4><blockquote class="script-voice">I don’t remember<br>when that changed.</blockquote>
+                  <h4>Closing Image</h4><p>The group sits together at night.</p><p>No one performs for the camera.</p><p>The protagonist looks around the room and realizes they are no longer observing from outside.</p>
+                </div>
+              </details>
+
+              <details class="scene-detail">
+                <summary><span class="timecode">1:25–2:00</span><span class="scene-name">Creation</span></summary>
+                <div class="scene-body">
+                  <h4>Story Purpose</h4><p>Reveal Dream House as a place where ideas move from the individual into the collective.</p><p>The energy accelerates, but the imagery remains physical, human, and tactile rather than corporate.</p>
+                  <h4>Picture</h4><ul><li>An empty whiteboard</li><li>The first line being drawn</li><li>Post-it notes spreading across a wall</li><li>A resident explaining an idea during a workshop using their whole body</li><li>Someone raising a hand with an unexpected solution</li><li>Another resident leaning forward with curiosity</li><li>Code reflected in someone’s eyes</li><li>Hands actively coding</li><li>A video timeline growing across a monitor</li><li>Dominik assembling a camera rig</li><li>A lens locking into place</li><li>Jai recording a podcast</li><li>A microphone moving closer</li><li>Askya discovering a melody on a keyboard</li><li>Someone rehearsing a pitch in a corridor</li><li>A nervous-system regulation class</li><li>Marvin creating his cards</li><li>A logo being drawn on paper</li><li>A performance being prepared</li><li>A tantric evening seen through details rather than exposition</li><li>People entering focus mode</li><li>Computer screens, hands, faces, notes, cables, and instruments</li><li>Several people talking excitedly at once</li></ul>
+                  <h4>Voiceover</h4><blockquote class="script-voice">An idea sounds different…</blockquote><p>Pause the voice.</p><p>Let a resident begin expressing an unfinished idea.</p><p>Another person leans in.</p><p>Someone adds a thought.</p><p>A third person begins drawing it.</p>
+                  <h4>Voiceover</h4><blockquote class="script-voice">once it is spoken into a room<br>full of people who believe in it.</blockquote><p>The music opens emotionally.</p>
+                  <h4>Human Support Within the Work</h4><ul><li>One person asleep beside their laptop</li><li>Someone quietly placing a blanket over them</li><li>Food or tea delivered without being requested</li><li>A difficult but intimate conversation between two people</li><li>The protagonist taking a quiet walk alone</li><li>Someone returning to their work with renewed energy</li><li>A group embracing after a breakthrough</li><li>A look shared after something finally works</li></ul>
+                  <h4>Voiceover</h4><blockquote class="script-voice">Maybe dreams were never meant<br>to live inside one person.</blockquote>
+                </div>
+              </details>
+
+              <details class="scene-detail">
+                <summary><span class="timecode">2:00–2:28</span><span class="scene-name">Transformation</span></summary>
+                <div class="scene-body">
+                  <h4>Story Purpose</h4><p>Move beyond productivity and show the fuller ecosystem that allows creation to happen: embodiment, play, vulnerability, expression, and care.</p><p>The experience should now feel larger than the house itself.</p>
+                  <h4>Picture</h4><ul><li>Morning meditation or movement</li><li>People swimming in the ocean</li><li>Breath and bodies moving together</li><li>A costume or themed night</li><li>Faces laughing in coloured light</li><li>Someone crying while being held</li><li>A long, uninterrupted hug</li><li>People lying on the floor after dancing</li><li>Emily’s performance</li><li>Birthday Crystal Flo</li><li>A song beginning with one person</li><li>Other voices gradually joining</li><li>A handheld shot moving through the dance floor</li><li>Bodies crossing the lens</li><li>Slow shutter and motion trails</li><li>Someone dancing without self-consciousness</li><li>The protagonist watching, then stepping into the movement</li></ul><p>Increase bloom and halation.</p><p>Allow practical lights and windows to wash across the image. The world should begin to feel almost dreamlike while remaining emotionally real.</p>
+                  <h4>Voiceover</h4><blockquote class="script-voice">Somewhere between the work…</blockquote><p class="script-note">Silence</p><p>Use sound from the actual moment.</p><blockquote class="script-voice">the dancing…</blockquote><p class="script-note">More silence</p><blockquote class="script-voice">the conversations that lasted<br>longer than the night…</blockquote><p>Cut from the height of the celebration to early morning.</p><p>The house is quiet.</p><p>Chairs remain out of place.</p><p>A glass of water.</p><p>An unfinished drawing.</p><p>One person is still awake, looking through a window.</p><blockquote class="script-voice">something began to feel different.</blockquote>
+                </div>
+              </details>
+
+              <details class="scene-detail">
+                <summary><span class="timecode">2:28–2:48</span><span class="scene-name">Expansion</span></summary>
+                <div class="scene-body">
+                  <h4>Story Purpose</h4><p>Show that the inner transformation is becoming visible in the outside world.</p><p>The dreams are no longer only being discussed. They are being released, shared, performed, and lived.</p>
+                  <h4>Picture</h4><ul><li>A project reaching its final stage</li><li>A cursor hovering above “Publish”</li><li>A person pressing Enter</li><li>A website going live</li><li>A film export completing</li><li>A finished piece playing on a screen</li><li>Someone stepping into the Pond</li><li>A leap into the water</li><li>People clapping</li><li>An audience applauding</li><li>Someone receiving a message and covering their mouth</li><li>The protagonist searching across the room for the person who supported them</li><li>Silent eye contact</li><li>A smile</li><li>An embrace</li><li>The group celebrating</li></ul><p>Do not explain exactly what has been launched. Let the emotional reaction communicate its significance.</p>
+                  <h4>Voiceover</h4><blockquote class="script-voice">The things we imagined…<br><br>started finding their way<br>into the world.</blockquote><p>The music almost completely disappears.</p><blockquote class="script-voice">And suddenly…</blockquote><p>Cut to black.</p>
+                </div>
+              </details>
+
+              <details class="scene-detail">
+                <summary><span class="timecode">2:48–3:00</span><span class="scene-name">Living the Dream</span></summary>
+                <div class="scene-body">
+                  <h4>Story Purpose</h4><p>Resolve the protagonist’s journey without closing the mystery completely.</p><p>Dream House ends, but the dream continues outside the house.</p>
+                  <h4>Picture</h4><ul><li>A suitcase closing</li><li>A drawing or handwritten message left on the wall</li><li>Empty spaces after everyone has gone</li><li>Saying goodbye</li><li>Long, unhurried embraces</li><li>A car leaving</li><li>Someone stepping onto a stage</li><li>Someone continuing their project elsewhere</li><li>The protagonist returning to Lisbon</li><li>Walking through the same street seen at the beginning</li><li>The same tram passing</li><li>The protagonist stopping for a moment</li></ul>
+                  <h4>Voiceover</h4><blockquote class="script-voice">we weren’t waiting<br>to live the dream anymore.</blockquote><p class="script-note">Silence</p><p>The fragmented images from the opening return, now held long enough to understand:</p><ul><li>The project being published</li><li>The group celebrating</li><li>The tears</li><li>The dancing</li><li>The embrace</li><li>The circle</li><li>The protagonist entering the house</li></ul><blockquote class="script-voice">We were already inside it.</blockquote><p>The music resolves without becoming fully conclusive.</p><p>The protagonist begins walking again.</p><p>White light slowly overtakes the frame.</p><p>A subtle Dream House symbol appears over or behind their silhouette.</p><blockquote class="script-voice">Maybe…<br>this is the dream.</blockquote>
+                  <h4>End Card</h4><p><strong>DREAM HOUSE</strong></p><p>Hold for two seconds.</p><p>Then reveal:</p><p><strong>The next dream is waiting.</strong></p><p>Dream House logo animation.</p><p>Fade to black.</p>
+                </div>
+              </details>
+            </div>
+          </section>
+
+          <section class="script-section" aria-labelledby="visual-direction-heading">
+            <h3 id="visual-direction-heading">Visual Direction</h3>
+            <p>The image should feel like reality slipping into memory.</p>
+            <div class="direction-grid">
+              <article><h4>Opening</h4><ul><li>Cooler and more neutral</li><li>Observational</li><li>Slight emotional distance</li><li>Reflections and partial views</li><li>Fast flashes that cannot yet be understood</li><li>Controlled halation around Lisbon lights and windows</li></ul></article>
+              <article><h4>Middle</h4><ul><li>Warmer skin tones</li><li>Greater camera proximity</li><li>Handheld intimacy</li><li>More movement</li><li>Longer reactions after key moments</li><li>Rich practical light</li><li>Increased glow and bloom</li></ul></article>
+              <article><h4>Ending</h4><ul><li>Expansive</li><li>Luminous</li><li>Emotionally explosive, followed by stillness</li><li>Strong highlight halation</li><li>Dreamlike overexposure</li><li>A sense that the experience is moving beyond the physical house</li></ul></article>
+            </div>
+            <h4>Use imperfections intentionally</h4><ul><li>Focus breathing</li><li>Reflections</li><li>Foreground obstructions</li><li>Lens flare</li><li>Slow shutter</li><li>Motion blur</li><li>Film grain</li><li>Blown highlights</li><li>Frames that begin before the action and continue after it ends</li></ul>
+          </section>
+
+          <section class="script-section" aria-labelledby="sound-direction-heading">
+            <h3 id="sound-direction-heading">Sound Direction</h3>
+            <p>The film should not depend only on music and narration.</p><p>Use diegetic sound and immersive foley to make the viewer feel physically present inside the experience.</p>
+            <h4>Key Sounds</h4><ul><li>Breathing</li><li>Curtains opening</li><li>Lisbon tram bells</li><li>Wheels moving over tram tracks</li><li>Doors opening</li><li>Footsteps</li><li>Bare feet on wood</li><li>Wind through a car window</li><li>Tea being poured</li><li>Marker strokes</li><li>Keyboard clicks</li><li>Camera buttons</li><li>Fabric moving</li><li>Ocean water</li><li>Distant conversations</li><li>Fragments of laughter</li><li>Celebration</li><li>A project notification</li><li>The silence immediately after a breakthrough</li></ul>
+            <p>Allow the music to stop completely at least twice:</p><ol><li>After the initial fast-cut hook</li><li>Before or during the final manifestation sequence</li></ol>
+            <p>The silence should make the spoken fragments feel like thoughts appearing inside the viewer rather than lines being delivered to them.</p>
+            <p>The final emotional response should be:</p><blockquote class="script-voice">“I don’t completely understand what happened there… but I need to experience it.”</blockquote>
+          </section>
+        </div>
       </section>
     </main>
 
