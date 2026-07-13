@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#15163f">
+  <meta name="description" content="Dream House July social media strategy — a living, dreamy digital canvas.">
+  <title>Dream House — July Social Strategy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #f8c59f;
+      --paper: #15163f;
+      --pink: #e56a9e;
+      --acid: #ffc083;
+      --lilac: #79509f;
+      --blue: #19274c;
+      --orange: #ef765f;
+      --violet: #31184f;
+      --line: rgba(248, 197, 159, .28);
+      --display: "Cormorant Garamond", Georgia, serif;
+      --mono: "Montserrat", sans-serif;
+      --mx: 50%;
+      --my: 30%;
+      --cursor-hue: 0deg;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 18% 15%, rgba(218, 83, 142, .22), transparent 28rem),
+        radial-gradient(circle at 88% 45%, rgba(240, 105, 82, .15), transparent 32rem),
+        linear-gradient(180deg, #13153d 0%, #2a174b 48%, #111937 100%);
+      font-family: var(--mono);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      pointer-events: none;
+      opacity: .28;
+      background-image:
+        radial-gradient(circle at 12% 18%, rgba(255,255,255,.42) 0 .45px, transparent .8px),
+        radial-gradient(circle at 74% 66%, rgba(255,184,160,.3) 0 .5px, transparent .9px),
+        repeating-linear-gradient(112deg, transparent 0 3px, rgba(255,255,255,.018) 3.5px 4px);
+      background-size: 7px 7px, 11px 11px, 9px 9px;
+      mix-blend-mode: soft-light;
+    }
+
+    a { color: inherit; }
+    button { font: inherit; }
+    .skip-link { position: absolute; left: -999px; top: 0; z-index: 200; }
+    .skip-link:focus { left: 1rem; top: 1rem; background: var(--paper); padding: .8rem; }
+
+    .aura {
+      position: fixed;
+      width: min(42vw, 520px);
+      aspect-ratio: 1;
+      left: var(--mx);
+      top: var(--my);
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+      background: radial-gradient(circle, rgba(255,194,139,.58) 0 9%, rgba(239,118,95,.38) 27%, rgba(229,106,158,.19) 49%, transparent 72%);
+      filter: blur(24px) hue-rotate(var(--cursor-hue));
+      transition: width .5s ease, filter .18s linear;
+      mix-blend-mode: screen;
+    }
+    .aura::before { content:""; position:absolute; inset:12%; border:1px solid rgba(255,210,174,.34); border-radius:50%; box-shadow:0 0 34px rgba(255,139,126,.28),inset 0 0 32px rgba(198,95,175,.22); }
+    .aura::after { content:""; position:absolute; inset:34%; border-radius:50%; background:rgba(255,220,181,.28); box-shadow:0 0 42px rgba(255,152,126,.5); }
+
+    .page { position: relative; z-index: 1; transition: filter 1.1s ease; }
+    body.shifted .page { filter: hue-rotate(142deg) saturate(1.12); }
+    .star-field { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+    .pixel-star { position: absolute; width: 2px; height: 2px; border-radius: 50%; background: #ffd2a8; box-shadow: 0 0 8px #ff9d91; animation: twinkle var(--speed) ease-in-out infinite alternate; opacity: var(--opacity); }
+    @keyframes twinkle { to { transform: scale(2.8); opacity: .2; } }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem clamp(1rem, 3vw, 2.5rem);
+      border-bottom: 1px solid var(--line);
+      background: rgba(18, 20, 58, .66);
+      backdrop-filter: blur(12px);
+    }
+    .logo { font-family: var(--display); font-size: 1rem; text-decoration: none; text-transform: uppercase; letter-spacing: .2em; }
+    .nav-right { display: flex; align-items: center; gap: 1.1rem; }
+    .nav-link { font-size: .7rem; text-decoration: none; text-transform: uppercase; }
+    .sound, .shift {
+      border: 1px solid currentColor;
+      border-radius: 999px;
+      background: transparent;
+      color: inherit;
+      padding: .5rem .75rem;
+      cursor: pointer;
+    }
+
+    .hero {
+      min-height: 96svh;
+      padding: clamp(1.25rem, 4vw, 3rem);
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      overflow: hidden;
+      position: relative;
+      isolation: isolate;
+      color: #ffd1aa;
+      background:
+        radial-gradient(ellipse at 50% 82%, rgba(255,147,116,.58) 0 2%, rgba(224,91,142,.32) 13%, transparent 34%),
+        radial-gradient(circle at 18% 44%, rgba(225,88,150,.32), transparent 28%),
+        radial-gradient(circle at 78% 18%, rgba(117,74,160,.52), transparent 25%),
+        linear-gradient(145deg, #12183d 0%, #382050 46%, #171942 100%);
+    }
+    .eyebrow { text-transform: uppercase; font-size: clamp(.65rem, 1.2vw, .8rem); letter-spacing: .12em; }
+    .hero-title {
+      align-self: center;
+      margin: 3rem 0;
+      font-family: var(--display);
+      font-weight: 400;
+      font-size: clamp(3.6rem, 11vw, 10rem);
+      line-height: .76;
+      letter-spacing: -.045em;
+      text-transform: uppercase;
+    }
+    .hero-title span { display: block; will-change: transform; }
+    .hero-title span:nth-child(1) { transform: translateX(calc(var(--scroll, 0) * -.03px)); }
+    .hero-title span:nth-child(2) { color: #ffab9a; margin-left: 13vw; transform: translateX(calc(var(--scroll, 0) * .04px)); text-shadow: 0 0 34px rgba(255,139,126,.45); }
+    .hero-title span:nth-child(3) { margin-left: 2vw; transform: translateX(calc(var(--scroll, 0) * -.02px)); }
+    .hero-title em { font-family: var(--display); font-weight: 400; text-transform: lowercase; letter-spacing: -.03em; }
+    .hero-meta { display: flex; justify-content: space-between; gap: 2rem; align-items: end; }
+    .hero-meta p { max-width: 34rem; margin: 0; font-size: clamp(.8rem, 1.5vw, 1rem); }
+    .scroll-mark { font-size: .72rem; text-transform: uppercase; white-space: nowrap; }
+
+    .orb {
+      position: absolute;
+      border: 1px solid var(--ink);
+      border-radius: 50%;
+      z-index: -1;
+      animation: float 8s ease-in-out infinite;
+    }
+    .orb.one { width: 18vw; min-width: 140px; aspect-ratio: 1; right: 4vw; top: 8%; border-color: rgba(255,209,170,.6); background: radial-gradient(circle at 38% 35%, #ffc28c 0 7%, #ee7893 24%, #6d3f8d 60%, rgba(25,28,75,.25) 72%); box-shadow: 0 0 70px rgba(233,103,145,.28), inset 24px -20px 0 rgba(33,20,74,.24); opacity: .78; }
+    .orb.two { width: 9vw; min-width: 80px; aspect-ratio: 1; left: 7vw; bottom: 6%; border-color: rgba(255,209,170,.55); background: radial-gradient(circle at 40% 35%, #ffd3a6, #ee8c79 38%, #65417f 72%); box-shadow: 0 0 45px rgba(244,124,104,.35); animation-delay: -3s; }
+    @keyframes float { 50% { transform: translate(10px, -18px) rotate(8deg); } }
+    .hero-art { position: absolute; width: min(62vw, 780px); right: -3vw; bottom: -4%; color: rgba(255,202,164,.42); z-index: -1; filter: drop-shadow(0 0 18px rgba(255,140,123,.25)); animation: art-breathe 9s ease-in-out infinite; }
+    .hero-art .glow-fill { fill: rgba(228,97,146,.08); }
+    .hero-art .line { fill: none; stroke: currentColor; stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+    .hero-art .thin { stroke-width: .6; opacity: .75; }
+    @keyframes art-breathe { 50% { transform: translateY(-12px) scale(1.015); opacity: .82; } }
+
+    .marquee { overflow: hidden; border-block: 1px solid var(--line); background: rgba(11,18,50,.88); color: #ffc69e; padding: .7rem 0; }
+    .marquee-track { display: flex; width: max-content; animation: marquee 24s linear infinite; }
+    .marquee span { font-family: var(--display); font-size: .72rem; text-transform: uppercase; white-space: nowrap; padding-right: 2rem; }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+
+    .section { padding: clamp(4rem, 10vw, 9rem) clamp(1rem, 5vw, 4.5rem); border-bottom: 1px solid var(--line); position: relative; overflow: hidden; }
+    .section::after { content: "✦     ·     ✧"; position: absolute; top: 2rem; right: 3vw; color: rgba(255,197,155,.45); letter-spacing: 1.4rem; font-size: .8rem; pointer-events: none; }
+    .section-head { display: grid; grid-template-columns: minmax(110px, .5fr) 2fr; gap: 2rem; align-items: start; margin-bottom: clamp(3rem, 8vw, 7rem); }
+    .section-no { font-size: .7rem; text-transform: uppercase; }
+    .section h2 { margin: 0; font-family: var(--display); font-size: clamp(2.6rem, 6vw, 6.2rem); line-height: .88; letter-spacing: -.04em; font-weight: 400; text-shadow: 0 0 36px rgba(240,117,111,.2); }
+    .section h2 em { font-family: Georgia, serif; font-weight: 400; }
+
+    #intention { background: radial-gradient(circle at 84% 12%, rgba(232,105,141,.2), transparent 28%), linear-gradient(180deg, rgba(20,22,64,.98), rgba(55,26,76,.98)); }
+    .intent-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); box-shadow: 0 24px 70px rgba(8,8,30,.35); }
+    .intent { background: rgba(23,24,67,.73); backdrop-filter: blur(18px); padding: clamp(1.25rem, 3vw, 2.5rem); min-height: 280px; display: flex; flex-direction: column; justify-content: space-between; transition: .35s ease; }
+    .intent:hover { background: rgba(229,106,158,.36); transform: translateY(-7px); }
+    .intent:nth-child(2):hover { background: rgba(239,118,95,.38); transform: translateY(-7px); }
+    .intent:nth-child(3):hover { background: rgba(121,80,159,.46); transform: translateY(-7px); }
+    .intent small { text-transform: uppercase; }
+    .intent h3 { font-family: var(--display); font-weight: 400; font-size: clamp(1.25rem, 2.3vw, 2.1rem); margin: 0; letter-spacing: -.05em; }
+    .intent p { margin: 1rem 0 0; font-size: .8rem; line-height: 1.55; }
+
+    .pillars { background: radial-gradient(circle at 78% 24%, rgba(240,116,103,.55), transparent 30%), linear-gradient(135deg, #251846, #5a285f 48%, #271945); position: relative; overflow: hidden; }
+    .pillar-list { border-top: 1px solid var(--ink); }
+    .pillar {
+      display: grid;
+      grid-template-columns: 70px 1fr minmax(180px, .7fr);
+      gap: 2rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--ink);
+      align-items: center;
+      transition: padding .25s ease, background .25s ease;
+    }
+    .pillar:hover { padding-inline: 1rem; background: rgba(229,106,158,.16); }
+    .pillar strong { font-family: var(--display); font-size: clamp(1.2rem, 3vw, 3rem); font-weight: 400; letter-spacing: -.06em; }
+    .pillar p { margin: 0; font-size: .78rem; line-height: 1.5; }
+    .pillar b { font-weight: 500; }
+    .star { position: absolute; right: -3vw; top: 4%; width: 24vw; opacity: .45; animation: spin 28s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .rhythm { background: radial-gradient(ellipse at 50% 100%, rgba(240,113,93,.25), transparent 42%), linear-gradient(180deg, #1b1d51, #4a285c); }
+    .week-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+    .week { position: relative; min-height: 330px; padding: 1.3rem; border: 1px solid var(--ink); border-radius: 48% 48% 1rem 1rem; display: flex; flex-direction: column; justify-content: flex-end; background: rgba(19,21,59,.68); backdrop-filter: blur(13px); overflow: hidden; box-shadow: inset 0 0 45px rgba(225,95,142,.08); }
+    .week::before { content: ""; position: absolute; inset: 8% 15% auto; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 45% 40%, #ffd1a1, #ef8a7c 28%, #cc5f98 55%, transparent 72%); filter: blur(2px); opacity: .75; transition: transform .5s ease; }
+    .week:nth-child(2)::before { background: radial-gradient(circle, #ffc19c, #d8639c 48%, transparent 72%); }
+    .week:nth-child(3)::before { background: radial-gradient(circle, #ef9aa6, #70458c 50%, transparent 72%); }
+    .week:nth-child(4)::before { background: radial-gradient(circle, #ffbd82, #e06e76 48%, transparent 72%); }
+    .week:hover::before { transform: scale(1.5); }
+    .week > * { position: relative; }
+    .week small { text-transform: uppercase; }
+    .week h3 { font-family: var(--display); font-size: clamp(1rem, 1.7vw, 1.45rem); font-weight: 400; letter-spacing: -.04em; margin: .6rem 0; }
+    .week p { font-size: .72rem; line-height: 1.5; margin: 0; }
+
+    .channels { background: radial-gradient(circle at 14% 16%, rgba(255,169,128,.36), transparent 25%), radial-gradient(circle at 82% 72%, rgba(212,86,145,.34), transparent 30%), linear-gradient(145deg, #5b2a63, #26204f 58%, #17183d); }
+    .channel-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 6rem); }
+    .channel { border-top: 1px solid var(--ink); padding-top: 1rem; }
+    .channel h3 { font-family: var(--display); font-size: clamp(1.8rem, 4vw, 4rem); font-weight: 400; letter-spacing: -.07em; margin: 0 0 1.5rem; }
+    .channel ul { list-style: none; padding: 0; margin: 0; }
+    .channel li { padding: .9rem 0; border-bottom: 1px solid rgba(43,20,61,.35); display: flex; justify-content: space-between; gap: 1rem; font-size: .78rem; }
+    .tag { border: 1px solid var(--ink); border-radius: 999px; padding: .15rem .5rem; font-size: .65rem; white-space: nowrap; }
+    .strategy-note { margin-top: 2rem; padding: clamp(1.2rem, 3vw, 2.3rem); border: 1px solid var(--line); background: rgba(18,21,60,.42); backdrop-filter: blur(14px); display: grid; grid-template-columns: minmax(120px, .45fr) 2fr; gap: 2rem; align-items: start; }
+    .strategy-note small { text-transform: uppercase; letter-spacing: .1em; }
+    .strategy-note strong { display: block; font-family: var(--display); font-size: clamp(1.5rem, 3vw, 3rem); font-weight: 400; line-height: .95; margin-bottom: .8rem; }
+    .strategy-note p { margin: 0; font-size: .78rem; line-height: 1.65; }
+    .strategy-note + .visual-grid { margin-top: 2rem; }
+    .alignment-grid { margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; border: 1px solid var(--line); background: var(--line); }
+    .alignment-grid article { padding: clamp(1.2rem, 3vw, 2rem); background: rgba(19,21,61,.72); }
+    .alignment-grid h3 { font-family: var(--display); font-size: clamp(1.5rem, 2.6vw, 2.4rem); font-weight: 400; margin: 0 0 .8rem; }
+    .alignment-grid p { font-size: .76rem; line-height: 1.6; margin: 0; }
+
+    .visual-language {
+      background:
+        radial-gradient(circle at 18% 74%, rgba(95,72,151,.34), transparent 28%),
+        radial-gradient(circle at 78% 20%, rgba(231,101,128,.26), transparent 32%),
+        linear-gradient(160deg, #121a3d, #3a2055 56%, #181a42);
+    }
+    .visual-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .visual-card {
+      min-height: 420px;
+      padding: clamp(1.2rem, 3vw, 2.4rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      border: 1px solid var(--line);
+      border-radius: 11rem 11rem 1rem 1rem;
+      position: relative;
+      overflow: hidden;
+      background: rgba(20,23,62,.58);
+      box-shadow: inset 0 0 65px rgba(255,148,132,.08), 0 25px 60px rgba(7,8,31,.2);
+      will-change: transform;
+    }
+    .visual-card::before {
+      content: "";
+      position: absolute;
+      width: 68%;
+      aspect-ratio: 1;
+      left: 16%;
+      top: 8%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 45% 42%, #ffd0a1, #df7b93 30%, #61458b 62%, transparent 72%);
+      filter: blur(3px);
+      opacity: .72;
+    }
+    .connection-card::before { background: radial-gradient(circle at 45% 42%, #ffcea0, #ef806f 34%, #9b4d87 62%, transparent 72%); }
+    .manifestation-card::before { background: radial-gradient(circle at 45% 42%, #f7afa0, #c55b9b 34%, #3d377e 62%, transparent 72%); }
+    .visual-card > * { position: relative; }
+    .visual-card small { text-transform: uppercase; letter-spacing: .08em; }
+    .visual-card h3 { margin: .7rem 0; font-family: var(--display); font-size: clamp(1.8rem, 3vw, 3rem); font-weight: 400; line-height: .9; }
+    .visual-card p { font-size: .76rem; line-height: 1.55; margin: 0; }
+    .visual-card .capture-line { margin-top: 1.2rem; padding-top: 1.2rem; border-top: 1px solid var(--line); color: #ffd2ac; }
+
+    .example-section {
+      background:
+        radial-gradient(circle at 18% 22%, rgba(229,92,143,.22), transparent 28%),
+        radial-gradient(circle at 82% 76%, rgba(241,128,91,.2), transparent 32%),
+        linear-gradient(150deg, #171943, #482452 58%, #171a42);
+    }
+    .example-layout { display: grid; grid-template-columns: minmax(280px, .8fr) 1.2fr; gap: clamp(2rem, 7vw, 7rem); align-items: center; }
+    .example-phone { margin: 0; padding: .65rem; border: 1px solid var(--line); border-radius: 2.5rem; background: rgba(9,12,35,.72); box-shadow: 0 35px 90px rgba(5,6,24,.46), 0 0 65px rgba(225,91,143,.14); transform: rotate(-1.4deg); transition: transform .6s ease, box-shadow .6s ease; }
+    .example-phone:hover { transform: rotate(0) translateY(-8px); box-shadow: 0 45px 110px rgba(5,6,24,.55), 0 0 85px rgba(240,124,96,.22); }
+    .example-phone img { display: block; width: 100%; height: auto; border-radius: 2rem; }
+    .example-copy > p { max-width: 44rem; font-size: .82rem; line-height: 1.7; margin: 0 0 2.5rem; }
+    .example-points { border-top: 1px solid var(--line); }
+    .example-point { display: grid; grid-template-columns: 54px 1fr; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid var(--line); }
+    .example-point span { font-size: .68rem; }
+    .example-point h3 { margin: 0 0 .35rem; font-family: var(--display); font-size: clamp(1.25rem, 2.2vw, 2rem); font-weight: 400; }
+    .example-point p { margin: 0; font-size: .74rem; line-height: 1.55; }
+
+    .story-arc {
+      background:
+        radial-gradient(circle at 12% 20%, rgba(220,86,144,.18), transparent 28%),
+        radial-gradient(circle at 84% 80%, rgba(239,119,91,.16), transparent 30%),
+        linear-gradient(180deg, #151944, #2d184e);
+    }
+    .arc-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .arc-intro { max-width: 50rem; margin: -3rem 0 3rem auto; font-size: .8rem; line-height: 1.65; }
+    .arc-step { min-height: 210px; padding: 1.5rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(21,22,64,.36); transition: background .3s ease, transform .3s ease; }
+    .arc-step:hover { background: rgba(229,106,158,.18); transform: translateY(-4px); }
+    .arc-step span { font-size: .68rem; }
+    .arc-step h3 { font-family: var(--display); font-size: clamp(1.7rem, 3vw, 3rem); font-weight: 400; margin: 2.8rem 0 .3rem; }
+    .arc-step p { font-size: .75rem; line-height: 1.5; margin: 0; }
+    .feeling-path { margin-top: 3.5rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: clamp(.5rem, 2vw, 1.5rem); font-family: var(--display); font-size: clamp(1.2rem, 2.5vw, 2.5rem); }
+    .feeling-path i { color: #ff9e8e; font-style: normal; }
+
+    .closing { min-height: 82svh; display: grid; place-items: center; text-align: center; padding: 4rem 1rem; background: radial-gradient(ellipse at 50% 72%, rgba(255,149,111,.58) 0 2%, rgba(223,87,144,.34) 13%, transparent 40%), radial-gradient(circle at 15% 30%, rgba(98,67,148,.4), transparent 26%), linear-gradient(180deg, #161944, #321a50 64%, #111936); color: #ffd0a8; overflow: hidden; position: relative; }
+    .closing h2 { font-family: var(--display); font-size: clamp(2.6rem, 9vw, 9rem); line-height: .88; letter-spacing: -.08em; font-weight: 400; margin: 0; max-width: 12ch; }
+    .closing h2 em { color: #ff9b92; font-family: var(--display); font-weight: 400; text-shadow: 0 0 35px rgba(255,121,117,.45); }
+    .closing p { max-width: 34rem; margin: 2rem auto 0; font-size: .8rem; line-height: 1.6; }
+    .closing-kicker { margin-top: 1.5rem; font-family: var(--display); font-size: clamp(1.4rem, 3vw, 2.8rem); color: #ff9b92; font-style: italic; text-shadow: 0 0 30px rgba(255,121,117,.4); }
+    .trailer-button { display: inline-flex; align-items: center; gap: .8rem; margin-top: 2.2rem; padding: .9rem 1.25rem; border: 1px solid rgba(255,208,168,.65); border-radius: 999px; color: #ffd0a8; text-decoration: none; text-transform: uppercase; letter-spacing: .12em; font-size: .7rem; background: rgba(20,20,60,.42); backdrop-filter: blur(12px); transition: transform .3s ease, background .3s ease, color .3s ease; }
+    .trailer-button:hover { transform: translateY(-4px); background: #ffd0a8; color: #251744; }
+    .moon { position: absolute; width: 240px; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 42% 38%, #ffc59e, #e27091 35%, #4a2d73 72%); filter: blur(5px); left: -70px; bottom: -90px; opacity: .6; }
+    .portal { position: absolute; width: min(34vw, 360px); aspect-ratio: .72; bottom: -12%; left: 50%; transform: translateX(-50%); border: 1px solid rgba(255,203,165,.35); border-bottom: 0; border-radius: 50% 50% 0 0; box-shadow: 0 0 55px rgba(236,110,124,.18), inset 0 0 50px rgba(229,97,147,.12); opacity: .7; }
+    .portal::before, .portal::after { content: ""; position: absolute; inset: 8%; border: 1px solid rgba(255,203,165,.25); border-bottom: 0; border-radius: 50% 50% 0 0; }
+    .portal::after { inset: 16%; box-shadow: inset 0 0 45px rgba(255,149,111,.16); }
+    footer { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem; background: #0d1430; color: #f7c49d; border-top: 1px solid rgba(255,240,213,.25); font-size: .65rem; text-transform: uppercase; }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 760px) {
+      .nav-link { display: none; }
+      .hero { min-height: 80svh; }
+      .hero-title { font-size: clamp(3.2rem, 18vw, 7rem); line-height: .82; }
+      .hero-title span:nth-child(2) { margin-left: 5vw; }
+      .hero-meta { align-items: start; flex-direction: column; }
+      .section-head { grid-template-columns: 1fr; gap: 1rem; }
+      .intent-grid, .week-grid, .channel-wrap, .visual-grid, .arc-grid, .alignment-grid, .strategy-note, .example-layout { grid-template-columns: 1fr; }
+      .intent { min-height: 220px; }
+      .pillar { grid-template-columns: 45px 1fr; gap: 1rem; }
+      .pillar p { grid-column: 2; }
+      .week { min-height: 260px; border-radius: 8rem 8rem 1rem 1rem; }
+      .visual-card { min-height: 360px; border-radius: 9rem 9rem 1rem 1rem; }
+      .example-phone { width: min(100%, 430px); margin-inline: auto; border-radius: 2rem; transform: none; }
+      .example-phone img { border-radius: 1.5rem; }
+      .arc-step { min-height: 160px; }
+      .arc-step h3 { margin-top: 1.5rem; }
+      .arc-intro { margin: -1rem 0 2rem; }
+      .hero-art { width: 120vw; right: -58vw; bottom: 4%; opacity: .42; }
+      .portal { width: 72vw; }
+      .feeling-path { align-items: flex-start; flex-direction: column; }
+      .feeling-path i { transform: rotate(90deg); }
+      footer { flex-direction: column; }
+      .aura { width: 80vw; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+      .aura { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to strategy</a>
+  <div class="star-field" aria-hidden="true"></div>
+  <div class="aura" aria-hidden="true"></div>
+  <div class="page">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="logo" href="#top">Dream House ☼</a>
+      <div class="nav-right">
+        <a class="nav-link" href="#intention">Mission</a>
+        <a class="nav-link" href="#pillars">Pillars</a>
+        <a class="nav-link" href="#rhythm">Rhythm</a>
+        <a class="nav-link" href="#story-arc">Story Arc</a>
+        <button class="shift" type="button" aria-label="Shift the color atmosphere" aria-pressed="false">color: dusk</button>
+        <button class="sound" type="button" aria-label="Toggle ambient sound" aria-pressed="false">sound: off</button>
+      </div>
+    </nav>
+
+    <main id="main">
+      <header class="hero" id="top">
+        <div class="eyebrow">July · Social Media Strategy · Documentary-led storytelling</div>
+        <h1 class="hero-title" aria-label="Dream House Social Strategy">
+          <span>Dream</span><span><em>house</em></span><span>Social</span>
+        </h1>
+        <div class="hero-meta">
+          <p>A documentary-led social strategy designed to make people believe Dream House could be their future home—where learning, human connection, and creation belong together.</p>
+          <div class="scroll-mark">Enter the house ↓</div>
+        </div>
+        <div class="orb one" aria-hidden="true"></div>
+        <div class="orb two" aria-hidden="true"></div>
+        <svg class="hero-art" viewBox="0 0 760 620" aria-hidden="true">
+          <circle class="line thin" cx="398" cy="285" r="250"/>
+          <path class="line glow-fill" d="M235 532V345l83-91h186l94 104v174z"/>
+          <path class="line" d="M235 532V345l83-91h186l94 104v174M318 254v278M504 254v278M235 345h363M318 254l86 91 100-91M318 345l86 187 100-187M404 345l-86 93M404 345l100 93M404 532l100-94"/>
+          <path class="line thin" d="M361 532v-74h49v74M398 35v76M360 73h76M372 47l52 52M424 47l-52 52"/>
+          <path class="line" d="M160 176c17 24 49 23 67 2-11 8-32 5-40-8-8-14-4-32 8-42-27 6-47 26-35 48z"/>
+          <path class="line thin" d="M101 273h40M121 253v40M624 167h32M640 151v32M647 250h22M658 239v22M151 105h18M160 96v18"/>
+          <path class="line thin" d="M85 532c37-59 71-86 110-108M99 499c32-9 48-25 56-48M663 532c-32-61-66-93-108-115M649 494c-28-8-43-24-51-47"/>
+        </svg>
+      </header>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>✦ attract through wonder ✦ connect through real people ✦ inspire through possibility ✦</span>
+          <span>✦ attract through wonder ✦ connect through real people ✦ inspire through possibility ✦</span>
+        </div>
+      </div>
+
+      <section class="section" id="intention">
+        <div class="section-head reveal">
+          <div class="section-no">01 / Mission</div>
+          <h2>Make joining feel like a <em>no-brainer.</em></h2>
+        </div>
+        <div class="intent-grid reveal">
+          <article class="intent"><small>Attract</small><div><h3>Create curiosity</h3><p>Do not explain everything at once. Lead with atmosphere, human details, and unanswered questions that make people stop and want to enter the story.</p></div></article>
+          <article class="intent"><small>Engage</small><div><h3>Make the promise real</h3><p>Show learning, connection, and creation happening side by side through recurring residents, honest moments, and tangible progress.</p></div></article>
+          <article class="intent"><small>Inspire</small><div><h3>Turn desire into action</h3><p>Move the audience from “What is Dream House?” to “Fuck yes—I want to be part of it.” The emotional case should arrive before the sales pitch.</p></div></article>
+        </div>
+      </section>
+
+      <section class="section pillars" id="pillars">
+        <svg class="star" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 2 59 37 91 17 68 45 98 50 68 56 91 84 59 64 50 98 41 64 9 84 32 56 2 50 32 45 9 17 41 37Z" fill="none" stroke="currentColor" stroke-width=".6"/></svg>
+        <div class="section-head reveal">
+          <div class="section-no">02 / Three Pillars</div>
+          <h2>Three pillars. One <em>recognizable world.</em></h2>
+        </div>
+        <div class="pillar-list reveal">
+          <article class="pillar"><span>01 · Mind</span><strong>Wisdom</strong><p><b>Useful information people can carry with them.</b> Dream Talks, 30–90 second podcast clips, workshop highlights, presenter reflections, one-minute takeaways, AI tips, business insights, book recommendations, whiteboard explanations, and “one thing I learned today.”</p></article>
+          <article class="pillar"><span>02 · Heart</span><strong>Connect</strong><p><b>Candid, felt moments that make the community real.</b> Capture what naturally happens: morning tea, shared meals, beach trips, dancing, cuddles, cooking, games, music-octopus moments, bonfires, group hugs, laughter, and quiet care.</p></article>
+          <article class="pillar"><span>03 · Hands</span><strong>Manifest</strong><p><b>The outcomes and creations emerging from Dream House.</b> Show what residents complete, launch, perform, publish, or bring into reality—apps, websites, AI workflows, businesses, music, films, workshops, and Somatic Attunement.</p></article>
+        </div>
+      </section>
+
+      <section class="section rhythm" id="rhythm">
+        <div class="section-head reveal">
+          <div class="section-no">03 / Weekly Rhythm</div>
+          <h2>A repeatable cadence that still feels <em>alive.</em></h2>
+        </div>
+        <div class="week-grid reveal">
+          <article class="week"><small>01 · Wisdom</small><h3>One useful idea</h3><p>Publish one piece of information people can learn from, save, share, or apply: a Dream Talk, workshop takeaway, tip, explanation, or reflection.</p></article>
+          <article class="week"><small>02 · Connect</small><h3>One candid feeling</h3><p>Publish one unforced human moment—a conversation, shared ritual, laugh, touch, playful exchange, or visual poem that makes the audience feel present.</p></article>
+          <article class="week"><small>03 · Manifest</small><h3>One visible outcome</h3><p>Show one creation that emerged from Dream House: what was built, completed, launched, performed, published, or made possible through collaboration.</p></article>
+          <article class="week"><small>04 · Always-on</small><h3>The life of the house</h3><p>Add one resident interview, one informal update, one cinematic recap, and daily Stories throughout the week.</p></article>
+        </div>
+        <div class="alignment-grid reveal">
+          <article><h3>Begin with clarity</h3><p>At the start of each week, define the story, desired outcomes, residents and projects to follow, priority moments, publishing dates, and who owns filming, editing, permissions, and posting.</p></article>
+          <article><h3>End with learning</h3><p>Review what was captured, what is still missing, which stories need follow-up, what projects progressed, and which emotional thread should continue into the next week.</p></article>
+        </div>
+      </section>
+
+      <section class="section channels">
+        <div class="section-head reveal">
+          <div class="section-no">04 / Dream House Stories</div>
+          <h2>One interview becomes a <em>content ecosystem.</em></h2>
+        </div>
+        <div class="channel-wrap reveal">
+          <article class="channel">
+            <h3>Every story contains</h3>
+            <ul><li><span>What brought you here?</span><span class="tag">learn</span></li><li><span>What surprised you about living together?</span><span class="tag">connect</span></li><li><span>What are you leaving having created?</span><span class="tag">manifest</span></li><li><span>What did Dream House help unlock?</span><span class="tag">transform</span></li></ul>
+          </article>
+          <article class="channel">
+            <h3>The distribution system</h3>
+            <ul><li><span>One 8–15 minute YouTube episode</span><span class="tag">depth</span></li><li><span>Three Reels or Shorts—one per pillar</span><span class="tag">reach</span></li><li><span>Quote graphics, Stories, and B-roll voiceovers</span><span class="tag">frequency</span></li><li><span>Testimonials and monthly trailer material</span><span class="tag">conversion</span></li></ul>
+          </article>
+        </div>
+        <div class="strategy-note reveal">
+          <small>Collaboration principle</small>
+          <div><strong>Residents are creative collaborators, not content subjects.</strong><p>Invite people inside Dream House to shape how their stories are told: pitch ideas, choose the moments that matter, help film, review edits, approve context, and co-publish when it feels right. The content becomes more honest—and the community becomes part of building the Dream House voice.</p></div>
+        </div>
+      </section>
+
+      <section class="section visual-language" id="capture">
+        <div class="section-head reveal">
+          <div class="section-no">05 / Capture + Visual Identity</div>
+          <h2>Recognizable pillars. One <em>cinematic world.</em></h2>
+        </div>
+        <div class="strategy-note reveal">
+          <small>Two-minute resident story</small>
+          <div><strong>What have you learned? Who have you connected with? What are you creating?</strong><p>Three simple questions can generate material across all three pillars. Keep the exchange conversational, then use the strongest lines as emotional anchors inside Reels, Stories, longer interviews, and the monthly trailer.</p></div>
+        </div>
+        <div class="visual-grid reveal">
+          <article class="visual-card wisdom-card"><small>Wisdom · Information</small><h3>Clear and useful</h3><p>Cool tones, clean typography, notebooks, laptops, books, whiteboards, close-ups, slow movement, and calm ambient sound.</p><p class="capture-line">The test: will someone learn something clear enough to remember, save, share, or use?</p></article>
+          <article class="visual-card connection-card"><small>Connect · Candid moments</small><h3>Felt, not staged</h3><p>Golden light, handheld movement, laughter, shared meals, ocean, dancing, hugs, natural sound, and organic or upbeat music.</p><p class="capture-line">The test: does this feel like a real moment the audience was lucky enough to witness?</p></article>
+          <article class="visual-card manifestation-card"><small>Manifest · Outcomes</small><h3>Show what exists now</h3><p>Finished work, launches, performances, presentations, creative workspaces, screens, cameras, code, music production, and energetic process-to-result edits.</p><p class="capture-line">The test: can the audience see what became real because this person was at Dream House?</p></article>
+        </div>
+      </section>
+
+      <section class="section example-section" id="example">
+        <div class="section-head reveal">
+          <div class="section-no">06 / Strategy in Practice</div>
+          <h2>What the system could look like <em>in the feed.</em></h2>
+        </div>
+        <div class="example-layout reveal">
+          <figure class="example-phone">
+            <img src="assets/instagram-strategy-example.png" loading="lazy" alt="Dream House Instagram profile concept showing the Wisdom, Connect, and Manifest content pillars followed by documentary photographs of life inside the house.">
+          </figure>
+          <div class="example-copy">
+            <p>This concept translates the strategy into a profile people can understand in seconds—then rewards them with a feed that feels human, cinematic, and alive.</p>
+            <div class="example-points">
+              <article class="example-point"><span>01</span><div><h3>Immediate positioning</h3><p>The bio communicates the promise clearly: wisdom, connection, and manifestation in one place—and a direct invitation to imagine what comes next.</p></div></article>
+              <article class="example-point"><span>02</span><div><h3>Three visual anchors</h3><p>Pinned pillar posts make Wisdom, Connect, and Manifest instantly recognizable without turning the profile into a rigid content template.</p></div></article>
+              <article class="example-point"><span>03</span><div><h3>Proof through real life</h3><p>The grid moves quickly from brand language to lived experience: nature, shared meals, performance, intimacy, experimentation, and resident stories.</p></div></article>
+              <article class="example-point"><span>04</span><div><h3>Consistency without sameness</h3><p>The color world, light, and emotional tone connect every post while each collaborator keeps their own face, voice, project, and perspective.</p></div></article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section story-arc" id="story-arc">
+        <div class="section-head reveal">
+          <div class="section-no">07 / Campaign Narrative</div>
+          <h2>One monthly story, not disconnected <em>posts.</em></h2>
+        </div>
+        <p class="arc-intro reveal">Mario will shape the month as one continuous narrative. Each post should advance the audience through the same emotional arc, while still working as a meaningful standalone story.</p>
+        <div class="arc-grid reveal">
+          <article class="arc-step"><span>01</span><h3>Wonder</h3><p>Tease the atmosphere before explaining the concept.</p></article>
+          <article class="arc-step"><span>02</span><h3>Arrival</h3><p>Introduce the residents, their dreams, and why they came.</p></article>
+          <article class="arc-step"><span>03</span><h3>Belonging</h3><p>Show rituals forming and strangers becoming community.</p></article>
+          <article class="arc-step"><span>04</span><h3>Creation</h3><p>Follow ideas becoming collaborations, experiments, and work.</p></article>
+          <article class="arc-step"><span>05</span><h3>Transformation</h3><p>Reveal personal, relational, and creative change.</p></article>
+          <article class="arc-step"><span>06</span><h3>Expansion</h3><p>Show what launches, continues, and travels beyond the house.</p></article>
+        </div>
+        <div class="feeling-path reveal" aria-label="Desired audience feeling: Wonder to Recognition to Desire to Belonging to Possibility">
+          <span>Wonder</span><i>→</i><span>Recognition</span><i>→</i><span>Desire</span><i>→</i><span>Belonging</span><i>→</i><span>Possibility</span>
+        </div>
+      </section>
+
+      <section class="closing">
+        <div class="moon" aria-hidden="true"></div>
+        <div class="portal" aria-hidden="true"></div>
+        <div class="reveal"><h2>From “What is this?” to <em>“Could this be home?”</em></h2><p>Success means the audience does more than understand the concept. They follow the residents’ journey, recognize the transformation, and see Dream House as a credible prototype for how life could be lived.</p><div class="closing-kicker">The answer should already feel like: fuck yes.</div><a class="trailer-button" href="script.html">The Trailer Script <span aria-hidden="true">→</span></a></div>
+      </section>
+    </main>
+
+    <footer><span>Dream House · July</span><span>Wisdom · Connect · Manifest</span></footer>
+  </div>
+
+  <script>
+    const root = document.documentElement;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const starField = document.querySelector('.star-field');
+
+    for (let i = 0; i < 72; i += 1) {
+      const star = document.createElement('span');
+      star.className = 'pixel-star';
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.setProperty('--speed', `${2.5 + Math.random() * 5}s`);
+      star.style.setProperty('--opacity', `${.18 + Math.random() * .62}`);
+      star.style.animationDelay = `${Math.random() * -6}s`;
+      starField.appendChild(star);
+    }
+
+    if (!reducedMotion && window.matchMedia('(pointer: fine)').matches) {
+      window.addEventListener('pointermove', (event) => {
+        root.style.setProperty('--mx', `${event.clientX}px`);
+        root.style.setProperty('--my', `${event.clientY}px`);
+        const hue = ((event.clientX / window.innerWidth) * 240) + ((event.clientY / window.innerHeight) * 70) - 120;
+        root.style.setProperty('--cursor-hue', `${hue}deg`);
+      }, { passive: true });
+
+      window.addEventListener('scroll', () => {
+        root.style.setProperty('--scroll', window.scrollY.toString());
+      }, { passive: true });
+
+      if (window.matchMedia('(pointer: fine)').matches) {
+        document.querySelectorAll('.visual-card, .week').forEach((card) => {
+          card.addEventListener('pointermove', (event) => {
+            const rect = card.getBoundingClientRect();
+            const rotateY = ((event.clientX - rect.left) / rect.width - .5) * 5;
+            const rotateX = (((event.clientY - rect.top) / rect.height - .5) * -5);
+            card.style.transform = `perspective(700px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+          });
+          card.addEventListener('pointerleave', () => { card.style.transform = ''; });
+        });
+      }
+    }
+
+    const shiftButton = document.querySelector('.shift');
+    shiftButton.addEventListener('click', () => {
+      const shifted = document.body.classList.toggle('shifted');
+      shiftButton.setAttribute('aria-pressed', shifted.toString());
+      shiftButton.textContent = shifted ? 'color: dream' : 'color: dusk';
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+    const soundButton = document.querySelector('.sound');
+    let audioContext;
+    let oscillator;
+    let gain;
+    soundButton.addEventListener('click', async () => {
+      const isOn = soundButton.getAttribute('aria-pressed') === 'true';
+      if (isOn) {
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + .5);
+        oscillator.stop(audioContext.currentTime + .55);
+        soundButton.textContent = 'sound: off';
+        soundButton.setAttribute('aria-pressed', 'false');
+        return;
+      }
+      audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      oscillator = audioContext.createOscillator();
+      gain = audioContext.createGain();
+      oscillator.type = 'sine';
+      oscillator.frequency.value = 174;
+      gain.gain.value = 0.0001;
+      oscillator.connect(gain).connect(audioContext.destination);
+      oscillator.start();
+      gain.gain.exponentialRampToValueAtTime(0.025, audioContext.currentTime + 1.3);
+      soundButton.textContent = 'sound: on';
+      soundButton.setAttribute('aria-pressed', 'true');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#15163f">
+  <meta name="description" content="Dream House trailer voice over and script.">
+  <title>Dream House — Voice Over & Script</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#f8c59f; --line:rgba(248,197,159,.28); --display:"Cormorant Garamond",Georgia,serif; --sans:"Montserrat",sans-serif; --mx:72%; --my:20%; --cursor-hue:0deg; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:#111438; font-family:var(--sans); overflow-x:hidden; }
+    body::before { content:""; position:fixed; inset:0; z-index:20; pointer-events:none; opacity:.27; background-image:radial-gradient(circle at 12% 18%,rgba(255,255,255,.4) 0 .45px,transparent .8px),radial-gradient(circle at 74% 66%,rgba(255,184,160,.3) 0 .5px,transparent .9px),repeating-linear-gradient(112deg,transparent 0 3px,rgba(255,255,255,.018) 3.5px 4px); background-size:7px 7px,11px 11px,9px 9px; mix-blend-mode:soft-light; }
+    .aura { position:fixed; width:min(45vw,560px); aspect-ratio:1; left:var(--mx); top:var(--my); transform:translate(-50%,-50%); border-radius:50%; background:radial-gradient(circle,rgba(255,194,139,.48),rgba(239,118,95,.28) 28%,rgba(229,106,158,.14) 50%,transparent 72%); filter:blur(24px) hue-rotate(var(--cursor-hue)); mix-blend-mode:screen; pointer-events:none; z-index:0; transition:filter .18s linear; }
+    .aura::before { content:""; position:absolute; inset:12%; border:1px solid rgba(255,210,174,.34); border-radius:50%; box-shadow:0 0 34px rgba(255,139,126,.28),inset 0 0 32px rgba(198,95,175,.22); }
+    .aura::after { content:""; position:absolute; inset:34%; border-radius:50%; background:rgba(255,220,181,.28); box-shadow:0 0 42px rgba(255,152,126,.5); }
+    .page { position:relative; z-index:1; }
+    nav { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1rem clamp(1rem,4vw,3rem); border-bottom:1px solid var(--line); background:rgba(14,17,52,.68); backdrop-filter:blur(12px); }
+    nav a { color:inherit; text-decoration:none; text-transform:uppercase; letter-spacing:.12em; font-size:.68rem; }
+    .hero { min-height:74svh; display:grid; align-content:center; padding:clamp(4rem,10vw,9rem) clamp(1rem,6vw,5rem); position:relative; overflow:hidden; background:radial-gradient(circle at 80% 28%,rgba(220,85,145,.34),transparent 25%),radial-gradient(ellipse at 45% 90%,rgba(245,130,91,.38),transparent 34%),linear-gradient(145deg,#13163e,#3b1f52 54%,#171941); }
+    .eyebrow { text-transform:uppercase; letter-spacing:.15em; font-size:.68rem; }
+    h1 { max-width:11ch; margin:2rem 0; font-family:var(--display); font-size:clamp(4rem,11vw,10rem); line-height:.74; letter-spacing:-.06em; font-weight:400; }
+    h1 em { color:#ff9d91; font-weight:400; text-shadow:0 0 34px rgba(255,121,117,.38); }
+    .hero p { max-width:42rem; margin:0; font-size:.82rem; line-height:1.7; }
+    .moon { position:absolute; width:min(24vw,300px); aspect-ratio:1; right:8vw; top:12%; border:1px solid rgba(255,208,168,.5); border-radius:50%; background:radial-gradient(circle at 40% 35%,#ffd0a0,#e47b91 33%,#5a3b86 70%); box-shadow:0 0 70px rgba(228,102,144,.28); animation:float 8s ease-in-out infinite; }
+    @keyframes float { 50% { transform:translateY(-18px) rotate(5deg); } }
+    .tabs-wrap { padding:0 clamp(1rem,6vw,5rem); background:#171941; border-bottom:1px solid var(--line); }
+    .tabs { display:flex; gap:.5rem; padding:1.2rem 0; }
+    .tab { border:1px solid var(--line); border-radius:999px; padding:.75rem 1rem; color:var(--ink); background:transparent; font:400 .7rem var(--sans); letter-spacing:.1em; text-transform:uppercase; cursor:pointer; }
+    .tab[aria-selected="true"] { background:var(--ink); color:#261844; }
+    .panel { display:none; }
+    .panel.active { display:block; }
+    .voice-page { padding:clamp(4rem,9vw,8rem) clamp(1rem,6vw,5rem); background:linear-gradient(180deg,#171941,#321b4c); }
+    .intro { display:grid; grid-template-columns:.55fr 2fr; gap:2rem; margin-bottom:5rem; }
+    .intro small,.label { text-transform:uppercase; letter-spacing:.12em; font-size:.65rem; }
+    h2 { margin:0; font-family:var(--display); font-size:clamp(2.8rem,6vw,6rem); line-height:.88; letter-spacing:-.04em; font-weight:400; }
+    h2 em { color:#ff9d91; font-weight:400; }
+    .format-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; margin-bottom:4rem; border:1px solid var(--line); background:var(--line); }
+    .format-grid article { padding:1.5rem; background:rgba(20,22,62,.78); }
+    .format-grid strong { display:block; margin-top:.65rem; font-family:var(--display); font-size:clamp(1.5rem,3vw,2.8rem); font-weight:400; }
+    .direction { margin-bottom:5rem; display:grid; grid-template-columns:.55fr 2fr; gap:2rem; padding-top:2rem; border-top:1px solid var(--line); }
+    .direction p { max-width:50rem; margin:0; font-size:.8rem; line-height:1.75; }
+    .arc { display:flex; flex-wrap:wrap; align-items:center; gap:.7rem; margin-top:1.5rem; font-family:var(--display); font-size:clamp(1.2rem,2.4vw,2.2rem); }
+    .arc i { color:#ff9d91; font-style:normal; }
+    .passage { display:grid; grid-template-columns:minmax(110px,.45fr) 1.5fr; gap:clamp(1rem,6vw,6rem); padding:clamp(2.5rem,6vw,5.5rem) 0; border-top:1px solid var(--line); opacity:0; transform:translateY(22px); transition:opacity .8s ease,transform .8s ease; }
+    .passage.visible { opacity:1; transform:none; }
+    .passage h3 { margin:.5rem 0 0; font-family:var(--display); font-size:clamp(2rem,4vw,4rem); line-height:.9; font-weight:400; }
+    .lines { max-width:36rem; }
+    blockquote { margin:0; font-family:var(--display); font-size:clamp(1.8rem,3.5vw,3.4rem); line-height:1.08; }
+    blockquote p { margin:0 0 1.2rem; }
+    .pause { margin:1.5rem 0; color:#ff9d91; font-size:.65rem; letter-spacing:.12em; text-transform:uppercase; }
+    .script-page { min-height:75svh; padding:clamp(5rem,12vw,10rem) clamp(1rem,6vw,5rem); background:radial-gradient(circle at 72% 32%,rgba(223,87,144,.25),transparent 28%),linear-gradient(180deg,#181a44,#321b4d); }
+    .placeholder { max-width:58rem; margin:auto; text-align:center; }
+    .placeholder .portal { width:min(55vw,420px); aspect-ratio:1; margin:0 auto 3rem; border:1px solid var(--line); border-radius:50%; display:grid; place-items:center; box-shadow:inset 0 0 70px rgba(225,93,143,.1),0 0 80px rgba(239,118,95,.12); animation:float 9s ease-in-out infinite; }
+    .placeholder .portal span { font-family:var(--display); font-size:clamp(3rem,8vw,7rem); color:#ff9d91; }
+    .placeholder p { max-width:40rem; margin:1.5rem auto 0; font-size:.8rem; line-height:1.7; }
+    footer { display:flex; justify-content:space-between; gap:1rem; padding:1rem; background:#0d1430; border-top:1px solid var(--line); font-size:.64rem; text-transform:uppercase; }
+    @media(max-width:760px){.moon{width:43vw;right:-8vw;top:18%;opacity:.7}.intro,.direction,.passage,.format-grid{grid-template-columns:1fr}.intro{margin-bottom:3rem}.direction{margin-bottom:3rem}.tabs{position:relative}.arc{align-items:flex-start;flex-direction:column}.arc i{transform:rotate(90deg)}footer{flex-direction:column}.aura{width:85vw}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.passage{opacity:1;transform:none}.aura{display:none}}
+  </style>
+</head>
+<body>
+  <div class="aura" aria-hidden="true"></div>
+  <div class="page">
+    <nav><a href="index.html">← Social Strategy</a><a href="#content">2–3 minutes · Art-film trailer</a></nav>
+    <header class="hero">
+      <div class="moon" aria-hidden="true"></div>
+      <div class="eyebrow">Dream House · The Trailer</div>
+      <h1>Voice Over <em>& Script</em></h1>
+      <p>Two parts of one film. The voiceover carries the inner memory of the experience; the script will translate that emotional journey into image, action, rhythm, and sound.</p>
+    </header>
+
+    <div class="tabs-wrap" id="content">
+      <div class="tabs" role="tablist" aria-label="Trailer document sections">
+        <button class="tab" type="button" role="tab" aria-selected="true" aria-controls="voice-panel" id="voice-tab">Voice Over</button>
+        <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="script-panel" id="script-tab">Script</button>
+      </div>
+    </div>
+
+    <main>
+      <section class="panel active voice-page" id="voice-panel" role="tabpanel" aria-labelledby="voice-tab">
+        <div class="intro"><small>Part 01</small><h2>Dream House <em>Voice Over</em></h2></div>
+
+        <div class="format-grid">
+          <article><span class="label">Length</span><strong>2–3 minutes</strong></article>
+          <article><span class="label">Style</span><strong>Cinematic art-film trailer</strong></article>
+        </div>
+
+        <div class="direction">
+          <div><span class="label">Emotional arc</span></div>
+          <div><p>The film begins like a dream the viewer cannot fully understand. It gradually becomes warmer, more human, and more alive. By the end, the audience realizes that what initially seemed imagined has become real.</p><div class="arc"><span>Wonder</span><i>→</i><span>Arrival</span><i>→</i><span>Belonging</span><i>→</i><span>Creation</span><i>→</i><span>Transformation</span><i>→</i><span>Expansion</span></div></div>
+        </div>
+
+        <div class="direction">
+          <div><span class="label">Voice direction</span></div>
+          <p>The voice should feel intimate and reflective—as though someone is remembering the experience, not narrating or explaining it. Leave generous silence between passages. The delivery is vulnerable, curious, and slightly dreamlike.</p>
+        </div>
+
+        <article class="passage"><div><span class="label">01</span><h3>Opening</h3></div><div class="lines"><blockquote><p>What is this place?</p><div class="pause">Silence</div><p>I feel like…<br>I’ve been here before.</p><div class="pause">Long pause</div><p>Or maybe…<br>I’ve only dreamed about it.</p></blockquote></div></article>
+        <article class="passage"><div><span class="label">02</span><h3>Arrival</h3></div><div class="lines"><blockquote><p>A place where things feel possible.</p><div class="pause">Pause</div><p>Where I could arrive as I am…<br>and still express all of me.</p></blockquote></div></article>
+        <article class="passage"><div><span class="label">03</span><h3>Connection</h3></div><div class="lines"><blockquote><p>At first…<br>we were strangers.</p><div class="pause">Long silence</div><p>I don’t remember<br>when that changed.</p></blockquote></div></article>
+        <article class="passage"><div><span class="label">04</span><h3>Creation</h3></div><div class="lines"><blockquote><p>An idea sounds different…</p><p>once it is spoken into a room<br>full of people who believe in it.</p><div class="pause">Pause</div><p>Maybe dreams were never meant<br>to live inside one person.</p></blockquote></div></article>
+        <article class="passage"><div><span class="label">05</span><h3>Transformation</h3></div><div class="lines"><blockquote><p>Somewhere between the work…</p><p>the dancing…</p><p>the conversations that lasted<br>longer than the night…</p><div class="pause">Pause</div><p>something began to feel different.</p></blockquote></div></article>
+        <article class="passage"><div><span class="label">06</span><h3>Resolution</h3></div><div class="lines"><blockquote><p>The things we imagined…</p><p>started finding their way<br>into the world.</p><div class="pause">Long pause</div><p>And suddenly…</p><p>we weren’t waiting<br>to live the dream anymore.</p></blockquote></div></article>
+        <article class="passage"><div><span class="label">07</span><h3>Ending</h3></div><div class="lines"><blockquote><p>We were already inside it.</p><div class="pause">Silence</div><p>Maybe…<br>this is the dream.</p></blockquote></div></article>
+      </section>
+
+      <section class="panel script-page" id="script-panel" role="tabpanel" aria-labelledby="script-tab" hidden>
+        <div class="placeholder"><div class="portal" aria-hidden="true"><span>✦</span></div><span class="label">Part 02</span><h2>The visual <em>script</em> to be confirmed.</h2><p>This section is ready for the scene-by-scene script you send: picture, action, resident voices, sound, pacing, transitions, and timing.</p></div>
+      </section>
+    </main>
+
+    <footer><span>Dream House · July</span><span>Voice Over & Script</span></footer>
+  </div>
+  <script>
+    const root = document.documentElement;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reducedMotion && window.matchMedia('(pointer: fine)').matches) {
+      window.addEventListener('pointermove', (event) => {
+        root.style.setProperty('--mx', `${event.clientX}px`);
+        root.style.setProperty('--my', `${event.clientY}px`);
+        const hue = ((event.clientX / window.innerWidth) * 240) + ((event.clientY / window.innerHeight) * 70) - 120;
+        root.style.setProperty('--cursor-hue', `${hue}deg`);
+      }, { passive:true });
+    }
+
+    const tabs = [...document.querySelectorAll('[role="tab"]')];
+    const panels = [...document.querySelectorAll('[role="tabpanel"]')];
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        tabs.forEach((item) => item.setAttribute('aria-selected', String(item === tab)));
+        panels.forEach((panel) => {
+          const active = panel.id === tab.getAttribute('aria-controls');
+          panel.classList.toggle('active', active);
+          panel.hidden = !active;
+        });
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold:.12 });
+    document.querySelectorAll('.passage').forEach((passage) => observer.observe(passage));
+  </script>
+</body>
+</html>
